@@ -10,7 +10,8 @@ public class Main {
     String[] conceptos = new String[100];
     double[] montos = new double[100];
     int contador = 0;
-
+    double total = 0;
+    double promedio = 0;
     int opcion;
 
     do {
@@ -23,12 +24,35 @@ public class Main {
         System.out.println("Selecciona una opcion");
         opcion = leer.nextInt();
         leer.nextLine();
-    switch (opcion) {
+
+
+        switch (opcion) {
         case 1:
             System.out.println("Concepto: ");
             conceptos[contador] = leer.nextLine();
             System.out.println("Monto: ");
+            montos[contador] = leer.nextDouble();
+            ids[contador] = contador + 1;
+            contador++;
+            System.out.println("!Gasto registrado!");
+            break;
+        case 2:
+            System.out.println("\n--- LISTA DE GASTOS ---");
+            for (int i = 0; i < contador; i++){
+                System.out.println("ID: " + ids[i] + "|" + conceptos[i] + "|" + montos [i]);
+            }
+            break;
+        case 3:
+            System.out.println("\n--- TOTAL Y PROMEDIO ---");
+            for (int i = 0; i < contador; i++) {
+                total = montos[i] + total;
+                if (i + 1 == contador)
+                    promedio = total / i + 1;
+            }
+            System.out.println("Total: " + total);
+            System.out.println("Promedio: " + promedio);
     }
+
 
     } while (opcion != 5);
 
