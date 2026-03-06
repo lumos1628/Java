@@ -46,9 +46,9 @@ public class Main {
             System.out.println("\n--- TOTAL Y PROMEDIO ---");
             for (int i = 0; i < contador; i++) {
                 total = montos[i] + total;
-                if (i + 1 == contador)
-                    promedio = total / i + 1;
+
             }
+            promedio = total / contador; /*PROMEDIADOR YA FUNCIONA LOL*/
             System.out.println("Total: " + total);
             System.out.println("Promedio: " + promedio);
     }
