@@ -21,39 +21,46 @@ public class Main {
         System.out.println("3. Calcular Total y Promedio");
         System.out.println("4. Buscar gasto por ID");
         System.out.println("5. Salir");
-        System.out.println("Selecciona una opcion");
+        System.out.println("Selecciona una opcion: ");
         opcion = leer.nextInt();
         leer.nextLine();
 
-
         switch (opcion) {
-        case 1:
-            System.out.println("Concepto: ");
-            conceptos[contador] = leer.nextLine();
-            System.out.println("Monto: ");
-            montos[contador] = leer.nextDouble();
-            ids[contador] = contador + 1;
-            contador++;
-            System.out.println("!Gasto registrado!");
-            break;
-        case 2:
-            System.out.println("\n--- LISTA DE GASTOS ---");
-            for (int i = 0; i < contador; i++){
-                System.out.println("ID: " + ids[i] + "|" + conceptos[i] + "|" + montos [i]);
-            }
-            break;
-        case 3:
-            System.out.println("\n--- TOTAL Y PROMEDIO ---");
-            for (int i = 0; i < contador; i++) {
-                total = montos[i] + total;
+            case 1:
+                System.out.println("Concepto: ");
+                conceptos[contador] = leer.nextLine();
+                System.out.println("Monto: ");
+                montos[contador] = leer.nextDouble();
+                ids[contador] = contador + 1;
+                contador++;
+                System.out.println("!Gasto registrado!");
+                break;
+            case 2:
+                System.out.println("\n--- LISTA DE GASTOS ---");
+                for (int i = 0; i < contador; i++) {
+                    System.out.println("ID: " + ids[i] + "|" + conceptos[i] + "|" + montos[i]);
+                }
+                break;
+            case 3:
+                System.out.println("\n--- TOTAL Y PROMEDIO ---");
+                for (int i = 0; i < contador; i++) {
+                    total = montos[i] + total;
 
-            }
-            promedio = total / contador; /*PROMEDIADOR YA FUNCIONA LOL*/
-            System.out.println("Total: " + total);
-            System.out.println("Promedio: " + promedio);
-    }
+                }
+                promedio = total / contador; /*PROMEDIADOR YA FUNCIONA LOL*/
+                System.out.println("Total: " + total);
+                System.out.println("Promedio: " + promedio);
+                break;
+            case 4:
+                System.out.println("\n--- BUSCAR GASTO POR ID---");
+                System.out.println("Digite el ID del gaso: ");
+                int tempID = leer.nextInt();
+                System.out.println("El gasto fue de " + montos[tempID] + " gastados en " + conceptos[tempID] );
 
-
+            case 5:
+                System.out.println("Saliendo...");
+                break;
+        }
     } while (opcion != 5);
 
     }
