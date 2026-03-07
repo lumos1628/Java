@@ -11,7 +11,6 @@ public class Main {
     double[] montos = new double[100];
     int contador = 0;
     double total = 0;
-    double promedio = 0;
     int opcion;
 
     do {
@@ -47,7 +46,7 @@ public class Main {
                     total = montos[i] + total;
 
                 }
-                promedio = total / contador; /*PROMEDIADOR YA FUNCIONA LOL*/
+                double promedio = total / contador; /*PROMEDIADOR YA FUNCIONA LOL*/
                 System.out.println("Total: " + total);
                 System.out.println("Promedio: " + promedio);
                 break;
@@ -56,9 +55,12 @@ public class Main {
                 System.out.println("Digite el ID del gaso: ");
                 int tempID = leer.nextInt();
                 System.out.println("El gasto fue de " + montos[tempID] + " gastados en " + conceptos[tempID] );
-
+                System.out.println("Trabajo hecho");
+                System.out.println("Se hizo legendario este muchacho, soy el");
             case 5:
                 System.out.println("Saliendo...");
+                System.out.println("Ya salimos xd");
+                System.out.println("Di las palabras magicas");
                 break;
         }
     } while (opcion != 5);
